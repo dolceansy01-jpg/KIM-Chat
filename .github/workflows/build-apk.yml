@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: Construire KIM Chat
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +20,9 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+
+      - name: Créer la plateforme Android
+        run: flutter create --platforms=android .
 
       - name: Installer les dépendances
         run: flutter pub get
